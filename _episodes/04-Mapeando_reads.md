@@ -100,7 +100,7 @@ samtools sort -O bam -o bam/sorted_bam/WENA_3_RNAseq_MS60Aligned.out.sorted.bam 
 Ahora aprovechando que todos los archivos que generamos terminan en .sorted.bam, podemos correr samtools index usando un for loop:
 
 ~~~
-for FILE in bam/*.sorted.bam;do samtools index $FILE;done
+for FILE in bam/sorted/*.sorted.bam;do samtools index $FILE;done
 ~~~
 {: .language-bash}  
 
