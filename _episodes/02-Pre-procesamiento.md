@@ -90,13 +90,13 @@ Este script lo correremos dos veces, uno para cada archivo de las reads pareadas
 
 
 ~~~
-cat metadata | while read line;do name1=$(echo "$line"|awk '{print $5}');name2=$(echo "$line"|awk '{print $1"_"$2"_"$3"_"$4}');mv "$name1" "${name2}_1.fq.gz";done
+cat metadata.txt | while read line;do name1=$(echo "$line"|awk '{print $5}');name2=$(echo "$line"|awk '{print $1"_"$2"_"$3"_"$4}');mv "$name1" "${name2}_1.fq.gz";done
 ~~~
 {: .language-bash}
 
 
 ~~~
-cat metadata | while read line;do name1=$(echo "$line"|awk '{print $6}');name2=$(echo "$line"|awk '{print $1"_"$2"_"$3"_"$4}');mv "$name1" "${name2}_2.fq.gz";done
+cat metadata.txt | while read line;do name1=$(echo "$line"|awk '{print $6}');name2=$(echo "$line"|awk '{print $1"_"$2"_"$3"_"$4}');mv "$name1" "${name2}_2.fq.gz";done
 ~~~
 {: .language-bash}
 
