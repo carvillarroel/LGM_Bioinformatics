@@ -12,22 +12,22 @@ A continuación mostraré como instalar Ubuntu para Windows y dejarlo listo para
 Ubuntu puede correr dentro de Windows 10 luego de activar algunas opciones (también es necesario tener Windows 10 actualizado)
 Hay varias versiones de Ubuntu (y otras distribuciones de Linux) disponibles en la Windows App store, pero nosotros instalaremos la version Ubuntu 20.04 
 
-![img0](../fig/image0.png)
+![img0](/fig/image0.png)
 
 En esa misma página se indica como activar las opciones de Windows para la ejecución de Ubuntu.
 
 Luego podemos abrir la Ubuntu app, que nos pedirá crear un nombre de usuario
 
-![img1](../fig/image1.png)
+![img1](/fig/image1.png)
 
 También nos pedirá crear un password para este usuario (al teclear el password no se imprimirá en pantalla!). Es importante no olvidar este password
 
-![img2](../fig/image2.png)
+![img2](/fig/image2.png)
 
 Podemos cambiar las preferencias de visualización de nuestra terminal, y además agregar opciones de copiado y pegado.
 
-![img4](../fig/image4.png)
-![img5](../fig/image5.png)
+![img4](/fig/image4.png)
+![img5](/fig/image5.png)
 
 Ahora estamos listos para instalar CONDA
 
@@ -51,7 +51,7 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 Esto iniciará la instalación de minicoda, en dónde pueden avanzar con la tecla Enter. Será necesario aceptar la licencia (Yes), y aceptar la direccion de instalación que nos dará. También al final es importante aceptar que conda se inicie con ubuntu.
 
-![img11](../fig/image11.png)
+![img11](/fig/image11.png)
 
 La instalación esta completa pero es necesario reiniciar ubuntu, simplemente con cerrar y volver abrir la app.
 Ahora nuestra terminal indica (base), que es el ambiente de conda que estamos usando.
