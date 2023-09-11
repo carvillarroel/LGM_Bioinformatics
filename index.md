@@ -3,7 +3,7 @@ layout: lesson
 root: .  # Is the only page that doesn't follow the pattern /:path/index.html
 permalink: index.html  # Is the only page that doesn't follow the pattern /:path/index.html
 ---
-Taller de Bioinformatica | Laboratorio de Genética Molecular - Universidad de Santiago de Chile
+Taller de Bioinformatica | Procesamiento de secuenciaciones ómicas
 <!-- this is an html comment -->
 
 {% comment %} Edición pre-alfa 1 {% endcomment %}
