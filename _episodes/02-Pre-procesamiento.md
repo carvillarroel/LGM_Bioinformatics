@@ -82,7 +82,7 @@ WExNA	1	RNAseq	LOW_N	SRR13826532_1.fastq.gz	SRR13826532_2.fastq.gz
 WExNA	2	RNAseq	LOW_N	SRR13826531_1.fastq.gz	SRR13826531_2.fastq.gz
 WExNA	3	RNAseq	LOW_N	SRR13826530_1.fastq.gz	SRR13826530_2.fastq.gz
 WE	1	DNAseq	YPD	3A_Sc_DBVPG6765_1.fastq.gz	3A_Sc_DBVPG6765_2.fastq.gz
-WExNA	1	ATACseq	HIGH_N	SRR13826527_1.fastq.gz	SRR13826527_2.fastq.gz
+WExNA	1	ATACseq	HIGH_N	SRR13826529_1.fastq.gz	SRR13826529_2.fastq.gz
 ~~~
 {: ..output}
 
