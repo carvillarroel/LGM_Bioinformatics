@@ -30,40 +30,40 @@ pwd
 Para ver si hemos descomprimido bien todos los archivos revisamos con ls. Añadimos la opción -R para visualizar también el contenido incluido en la carpeta reference_genome
 
 ~~~
-ls -R
+ls -1R
 ~~~
 {: .language-bash}
 
 ~~~
 .:
-
+ERR023691_1.fastq.gz
+ERR023691_2.fastq.gz
 metadata.txt
-ATAC_1.fastq.gz
-ATAC_2.fastq.gz
-3A_Sc_DBVPG6765_1.fastq.gz
-3A_Sc_DBVPG6765_2.fastq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAABRAAPEI-P20B8_1.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAABRAAPEI-P20B8_2.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAHRABPEI-P92H8_1.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAHRABPEI-P92H8_2.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAANRABPEI-P69F9_1.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAANRABPEI-P69F9_2.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAORABPEI-P81G9_1.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAORABPEI-P81G9_2.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAURABPEI-P58E10_1.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAURABPEI-P58E10_2.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAYRABPEI-P11A11_1.fq.gz
-FCHTNGHCCXY_L8_HKRDYEAwgtTAAYRABPEI-P11A11_2.fq.gz
+reference_genome
+SRR13826529_1.fastq.gz
+SRR13826529_2.fastq.gz
+SRR13826530_1.fastq.gz
+SRR13826530_2.fastq.gz
+SRR13826531_1.fastq.gz
+SRR13826531_2.fastq.gz
+SRR13826532_1.fastq.gz
+SRR13826532_2.fastq.gz
+SRR13826533_1.fastq.gz
+SRR13826533_2.fastq.gz
+SRR13826534_1.fastq.gz
+SRR13826534_2.fastq.gz
+SRR13826535_1.fastq.gz
+SRR13826535_2.fastq.gz
 
 ./reference_genome:
-sacCer3.ensGene.gtf
-sacCer3.fa
+Saccharomyces_cerevisiae.R64-1-1.57.gff3
+Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa
 ~~~
 {: ..output}
 
 
 
-El archivo metadata.txt contiene información sobre el origen de cada archivo de secuenciación, indicando la cepa de levadura, la réplica biológica, el experimento (MS300,MS60,YPD), y el tipo de ensayo que se obtuvo de ese experimento (RNAseq, DNAseq, ATACseq).
+El archivo metadata.txt contiene información sobre el origen de cada archivo de secuenciación, indicando la cepa de levadura, la réplica biológica, el experimento (HIGH NITROGEN,LOW NITROGEN,YPD), y el tipo de ensayo que se obtuvo de ese experimento (RNAseq, DNAseq, ATACseq).
 
 Para revisarlo en pantalla (y aprovechando que es un archivo tabulado relativamente pequeño) usaremos cat
 
@@ -82,7 +82,7 @@ WExNA	1	RNAseq	LOW_N	SRR13826532_1.fastq.gz	SRR13826532_2.fastq.gz
 WExNA	2	RNAseq	LOW_N	SRR13826531_1.fastq.gz	SRR13826531_2.fastq.gz
 WExNA	3	RNAseq	LOW_N	SRR13826530_1.fastq.gz	SRR13826530_2.fastq.gz
 WE	1	DNAseq	YPD	3A_Sc_DBVPG6765_1.fastq.gz	3A_Sc_DBVPG6765_2.fastq.gz
-WExNA	1	ATACseq	HIGH_N	SRR13826527.fastq.gz	SRR13826527.fastq.gz
+WExNA	1	ATACseq	HIGH_N	SRR13826527_1.fastq.gz	SRR13826527_2.fastq.gz
 ~~~
 {: ..output}
 
