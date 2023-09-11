@@ -3,9 +3,9 @@ title: "Visualizar mapeos y control de calidad"
 teaching: 60
 exercises: 30
 questions:
-- "¿?"
+- "¿Cómo visualizo las lecturas alineadas al genoma de referencia?"
 keypoints:
-- ""
+- "Utilizar herramientas visuales para examinar el alineamiento de lecturas"
 ---
 
 ## Visualización de mapeos con IGV
