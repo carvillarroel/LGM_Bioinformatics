@@ -1,13 +1,13 @@
 ---
-title: "Mapeando reads al genoma"
+title: "Alineando lecturas al genoma"
 teaching: 60
 exercises: 30
 questions:
-- "¿Como mapeo reads al genoma?"
+- "¿Como alineo lecturas al genoma?"
 objectives:
-- "Crear indeces del genoma para los programas de mapeo"
-- "Mapear reads de DNAseq y ATACseq al genoma con BWA"
-- "Mapear reads de RNAseq a los genes anotados en el genoma"
+- "Crear indeces del genoma para los programas de alineamiento"
+- "Alinear lecturas de DNAseq y ATACseq al genoma con BWA"
+- "Alinear lecturas de RNAseq a los genes anotados en el genoma"
 keypoints:
 - ""
 ---
