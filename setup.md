@@ -5,8 +5,8 @@ Para este curso es necesario contar con un sistema UNIX, por ejemplo Mac OSX, Ub
 También es tener una instalación de MAMBA (conda), que nos facilitará la instalación de herramientas bioinformaticas
 Por último, necesitaremos el explorador de genomas (genome browser) JBROWSE, que puede ser ejecutado directamente en Windows. 
 
-+ Instalación de MAMBA : https://github.com/conda-forge/miniforge#mambaforge
-+ Instalación de JBROWSE : https://jbrowse.org/jb2/
++ Instalación de MAMBA : [MAMBA INSTALL]: https://github.com/conda-forge/miniforge#mambaforge
++ Instalación de JBROWSE : [JBROWSE INSTALL]: https://jbrowse.org/jb2/
 
 Instalaremos programas bioinformaticos en nuestro Linux con el comando mamba create
 
