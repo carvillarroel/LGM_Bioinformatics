@@ -3,11 +3,11 @@ title: "Introduction"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- "Introducción al taller"
 objectives:
-- "First learning objective. (FIXME)"
+- "Conocer los objetivos del taller"
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- "¿Que tipo de datos utilizaremos?"
 ---
 En este curso aprenderemos a trabajar con datos de secuenciación masiva, y en particular aprenderemos a analizar datos de RNAseq.
 Sin embargo, para observar como difieren distintos tipos de datos de secuenciación masiva, también analizaremos ligeramente datos de DNAseq y ATACseq.
