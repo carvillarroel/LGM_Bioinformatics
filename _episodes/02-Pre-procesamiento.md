@@ -12,8 +12,11 @@ keypoints:
 
 ## Explorar y ordenar los archivos del curso
 
-Primero revisamos si estamos en la carpeta Taller_NGS
+Primero creamos la carpeta ubuntu para descomprir en esa carpeta el archivo Taller_NGS.zip
 ~~~
+cd /mnt/c/
+mkdir ubuntu/
+cd ubuntu
 pwd
 ~~~
 {: .language-bash}
