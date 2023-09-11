@@ -3,11 +3,11 @@ title: "Ordenando los datos de secuenciacion masiva"
 teaching: 60
 exercises: 30
 questions:
-- "Key question ¿Como proceso los archivos obtenidos de secuenciación masiva?"
+- "¿Como proceso los archivos obtenidos de secuenciación masiva?"
 objectives:
 - "Aprender a renombrar y mover archivos usando funciones de bash"
 keypoints:
-- ""
+- "Usar archivos de textos como metadata para ordenar experimentos bioinformaticos"
 ---
 
 ## Explorar y ordenar los archivos del curso
