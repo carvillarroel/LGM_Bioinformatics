@@ -20,7 +20,7 @@ BWA y RNA STAR requiren realizar un index del genoma de referencia (que les perm
 
 
 ~~~
-bwa index reference_genome/sacCer3.fa
+bwa index reference_genome/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa
 ~~~
 {: .language-bash}
 
@@ -46,7 +46,7 @@ Ahora realizamos el index para analizar transcriptomas con RNA STAR. En este cas
 
 ~~~
 mkdir star_saccer
-STAR --runMode genomeGenerate --genomeDir star_saccer/ --genomeFastaFiles reference_genome/sacCer3.fa --sjdbGTFfile reference_genome/sacCer3.ensGene.gtf
+STAR --runMode genomeGenerate --genomeDir star_saccer/ --genomeFastaFiles reference_genome/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa --sjdbGTFfile reference_genome/Saccharomyces_cerevisiae.R64-1-1.57.gff3
 ~~~
 {: .language-bash}
 
@@ -57,26 +57,19 @@ Primero creamos un directorio donde dejar los archivos de mapeo (bam), y luego e
 
 ~~~
 mkdir bam
-bwa mem -t 8 -o bam/WE_1_DNAseq_YPD_1.sam reference_genome/sacCer3.fa DNAseq/cleaned_WE_1_DNAseq_YPD_1.fq.gz DNAseq/cleaned_WE_1_DNAseq_YPD_2.fq.gz
-bwa mem -t 8 -o bam/WExNA_1_ATACseq_MS300_1.sam reference_genome/sacCer3.fa ATACseq/cleaned_WExNA_1_ATACseq_MS300_1.fq.gz ATACseq/cleaned_WExNA_1_ATACseq_MS300_2.fq.gz
+bwa mem -t 8 -o bam/WE_1_DNAseq_YPD_1.sam reference_genome/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa DNAseq/cleaned_WE_1_DNAseq_YPD_1.fq.gz DNAseq/cleaned_WE_1_DNAseq_YPD_2.fq.gz
+bwa mem -t 8 -o bam/WExNA_1_ATACseq_HIGH_N_1.sam reference_genome/Saccharomyces_cerevisiae.R64-1-1.dna.toplevel.fa ATACseq/cleaned_WExNA_1_ATACseq_HIGH_N_1.fq.gz ATACseq/cleaned_WExNA_1_ATACseq_HIGH_N_2.fq.gz
 ~~~
 {: .language-bash}
 
-Para RNA STAR debemos descomprimir nuestros archivos primero
-
+Luego ejecutamos STAR para cada pareja de reads pareadas 
 ~~~
-gzip -d -k RNAseq/cleaned_*.gz
-~~~
-{: .language-bash}
-
-Luego ejecutamos STAR para cada pareja de reads pareadas (con los archivos descomprimidos que terminan fq!)
-~~~
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_RNAseq_MS300_1.fq RNAseq/cleaned_WExNA_1_RNAseq_MS300_2.fq  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_MS300  --outSAMtype BAM Unsorted
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_RNAseq_MS300_1.fq RNAseq/cleaned_WExNA_2_RNAseq_MS300_2.fq  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_MS300  --outSAMtype BAM Unsorted
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_RNAseq_MS300_1.fq RNAseq/cleaned_WExNA_3_RNAseq_MS300_2.fq  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_MS300  --outSAMtype BAM Unsorted
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_RNAseq_MS60_1.fq RNAseq/cleaned_WExNA_1_RNAseq_MS60_2.fq  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_MS60  --outSAMtype BAM Unsorted
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_RNAseq_MS60_1.fq RNAseq/cleaned_WExNA_2_RNAseq_MS60_2.fq  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_MS60  --outSAMtype BAM Unsorted
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_RNAseq_MS60_1.fq RNAseq/cleaned_WExNA_3_RNAseq_MS60_2.fq  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_MS60  --outSAMtype BAM Unsorted
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_RNAseq_HIGH_N_1.fq.gz RNAseq/cleaned_WExNA_1_RNAseq_HIGH_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_HIGH_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_RNAseq_HIGH_N_1.fq.gz RNAseq/cleaned_WExNA_2_RNAseq_HIGH_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_HIGH_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_RNAseq_HIGH_N_1.fq.gz RNAseq/cleaned_WExNA_3_RNAseq_HIGH_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_HIGH_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_LOW_N_MS60_1.fq.gz RNAseq/cleaned_WExNA_1_LOW_N_MS60_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_LOW_N_MS60_1.fq.gz RNAseq/cleaned_WExNA_2_LOW_N_MS60_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_LOW_Nq_MS60_1.fq.gz RNAseq/cleaned_WExNA_3_LOW_N_MS60_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
 
 
 ~~~
@@ -87,13 +80,13 @@ Los archivos SAM y BAM se pueden optimizar para las siguientes tareas, primero o
 ~~~
 mkdir bam/sorted_bam
 samtools sort -O bam -o bam/sorted_bam/WE_1_DNAseq_YPD_1.sorted.bam bam/WE_1_DNAseq_YPD_1.sam
-samtools sort -O bam -o bam/sorted_bam/WExNA_1_ATACseq_MS300_1.sorted.bam bam/WExNA_1_ATACseq_MS300_1.sam
-samtools sort -O bam -o bam/sorted_bam/WENA_1_RNAseq_MS300Aligned.out.sorted.bam bam/WENA_1_RNAseq_MS300Aligned.out.bam
-samtools sort -O bam -o bam/sorted_bam/WENA_2_RNAseq_MS300Aligned.out.sorted.bam bam/WENA_2_RNAseq_MS300Aligned.out.bam
-samtools sort -O bam -o bam/sorted_bam/WENA_3_RNAseq_MS300Aligned.out.sorted.bam bam/WENA_3_RNAseq_MS300Aligned.out.bam
-samtools sort -O bam -o bam/sorted_bam/WENA_1_RNAseq_MS60Aligned.out.sorted.bam bam/WENA_1_RNAseq_MS60Aligned.out.bam
-samtools sort -O bam -o bam/sorted_bam/WENA_2_RNAseq_MS60Aligned.out.sorted.bam bam/WENA_2_RNAseq_MS60Aligned.out.bam
-samtools sort -O bam -o bam/sorted_bam/WENA_3_RNAseq_MS60Aligned.out.sorted.bam bam/WENA_3_RNAseq_MS60Aligned.out.bam
+samtools sort -O bam -o bam/sorted_bam/WExNA_1_ATACseq_HIGH_N_1.sorted.bam bam/WExNA_1_ATACseq_HIGH_N_1.sam
+samtools sort -O bam -o bam/sorted_bam/WENA_1_RNAseq_HIGH_N_Aligned.out.sorted.bam bam/WENA_1_RNAseq_HIGH_N_Aligned.out.bam
+samtools sort -O bam -o bam/sorted_bam/WENA_2_RNAseq_HIGH_N_Aligned.out.sorted.bam bam/WENA_2_RNAseq_HIGH_N_Aligned.out.bam
+samtools sort -O bam -o bam/sorted_bam/WENA_3_RNAseq_HIGH_N_Aligned.out.sorted.bam bam/WENA_3_RNAseq_HIGH_N_Aligned.out.bam
+samtools sort -O bam -o bam/sorted_bam/WENA_1_RNAseq_LOW_N_Aligned.out.sorted.bam bam/WENA_1_RNAseq_LOW_N_Aligned.out.bam
+samtools sort -O bam -o bam/sorted_bam/WENA_2_RNAseq_LOW_N_ligned.out.sorted.bam bam/WENA_2_RNAseq_LOW_N_Aligned.out.bam
+samtools sort -O bam -o bam/sorted_bam/WENA_3_RNAseq_LOW_N_Aligned.out.sorted.bam bam/WENA_3_RNAseq_LOW_N_Aligned.out.bam
 ~~~
 {: .language-bash}  
 
