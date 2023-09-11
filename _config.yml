@@ -10,11 +10,11 @@
 carpentry: "swc"
 
 # Overall title for pages.
-title: "Taller de Bioinformática - Laboratorio de Genética Molecular - Universidad de Santiago de Chile"
+title: "Taller de Bioinformática - Análisis de técnicas ómicas"
 
 # Life cycle stage of the lesson
 # possible values: "pre-alpha", "alpha", "beta", "stable"
-life_cycle: "pre-alpha"
+life_cycle: "alpha"
 
 #------------------------------------------------------------
 # Generic settings (should not need to change).
