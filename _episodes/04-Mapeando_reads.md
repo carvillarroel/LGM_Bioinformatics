@@ -67,9 +67,9 @@ Luego ejecutamos STAR para cada pareja de reads pareadas
 STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_RNAseq_HIGH_N_1.fq.gz RNAseq/cleaned_WExNA_1_RNAseq_HIGH_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_HIGH_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
 STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_RNAseq_HIGH_N_1.fq.gz RNAseq/cleaned_WExNA_2_RNAseq_HIGH_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_HIGH_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
 STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_RNAseq_HIGH_N_1.fq.gz RNAseq/cleaned_WExNA_3_RNAseq_HIGH_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_HIGH_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_RNAseq_LOW_N_MS60_1.fq.gz RNAseq/cleaned_WExNA_1_RNAseq_LOW_N_MS60_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_RNAseq_LOW_N_MS60_1.fq.gz RNAseq/cleaned_WExNA_2_RNAseq_LOW_N_MS60_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
-STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_RNAseq_LOW_Nq_MS60_1.fq.gz RNAseq/cleaned_WExNA_3_RNAseq_LOW_N_MS60_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_1_RNAseq_LOW_N_1.fq.gz RNAseq/cleaned_WExNA_1_RNAseq_LOW_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_1_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_2_RNAseq_LOW_N_1.fq.gz RNAseq/cleaned_WExNA_2_RNAseq_LOW_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_2_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
+STAR --runThreadN 8 --readFilesIn RNAseq/cleaned_WExNA_3_RNAseq_LOW_N_1.fq.gz RNAseq/cleaned_WExNA_3_RNAseq_LOW_N_2.fq.gz  --genomeDir star_saccer/ --outFileNamePrefix bam/WENA_3_RNAseq_LOW_N_  --outSAMtype BAM Unsorted --readFilesCommand zcat --outTmpDir ~/tmp/
 
 
 ~~~
