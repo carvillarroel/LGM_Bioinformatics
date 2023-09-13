@@ -99,5 +99,16 @@ for FILE in bam/sorted_bam/*.sorted.bam;do samtools index $FILE;done
 
 Estos archivos nos servirán en la próxima sección para visualizar y realizar informes de calidad de mapeo.
 
+Finalmente, utilizaremos featureCounts para contar la cantidad de lecturas que alinean en ciertas regiones (features) del genoma, en este caso estas regiones serán "genes" segun el archivo GFF3.
+
+~~~
+mamba install -c bioconda subread
+featureCounts -p -a reference_genome/Saccharomyces_cerevisiae.R64-1-1.57.gff3 -t gene -T 8 -o counts.tsv bam/sorted_bam/WENA_1_RNAseq_HIGH_N_Aligned.out.sorted.bam bam/sorted_bam/WENA_2_RNAseq_HIGH_N_Aligned.out.sorted.bam bam/sorted_bam/WENA_3_RNAseq_HIGH_N_Aligned.out.sorted.bam bam/sorted_bam/WENA_1_RNAseq_LOW_N_Aligned.out.sorted.bam bam/sorted_bam/WENA_2_RNAseq_LOW_N_ligned.out.sorted.bam bam/sorted_bam/WENA_3_RNAseq_LOW_N_Aligned.out.sorted.bam
+~~~
+{: .language-bash}  
+
+
 {: .language-bash}
 {% include links.md %}
+
+
